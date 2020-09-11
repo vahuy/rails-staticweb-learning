@@ -1,0 +1,79 @@
+########## Ruby
+// install sdk
+$ sudo apt install curl -y
+$ sudo apt install gnupg2
+$ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ \curl -sSL https://get.rvm.io | bash -s stable --rails
+
+// install bundler: https://bundler.io/v1.12/
+$ gem install bundler
+
+//Install all of the required gems from your specified sources:
+$ bundle install
+$ git add Gemfile Gemfile.lock
+
+// install debugger
+* To start using RVM you need to run `source /home/ub/.rvm/scripts/rvm`
+in all your open shell windows, in rare cases you need to reopen all shell windows.
+$ source /home/ub/.rvm/scripts/rvm
+	
+* To start using rails you need to run `rails new <project_dir>`.
+$ rails new <project_dir>
+
+//update gem version
+$ gem install rubygems-update
+$ update_rubygems
+$ gem update --system
+
+########## Rails
+// Install yarn
+https://classic.yarnpkg.com/en/docs/install#debian-stable
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+$ sudo apt remove cmdtest -y
+
+$ sudo apt update && sudo apt install --no-install-recommends yarn -y
+
+$ sudo apt install nodejs -y
+
+$ rails webpacker:install
+
+$ yarn install --check-files
+
+// WORK WITH RAILS
+// deploy rails app
+// $ rails s
+- create controller: this will create controller and view file.
+- edit routes: this will define action
+- create model
+
+1. create controller:
+$ rails generate controller home index
+//set at homepage:
+$ 
+
+$ rails generate controller pages
+
+**************
+// set up bundler
+https://www.jetbrains.com/help/ruby/using-the-bundler.html#bundle_init
+
+$ gem install pg -- --with-pg-config=/home/ub/workspace/rails-library-learning/db/pg-config.conf
+// config firewall
+$ sudo apt-get install gufw
+
+***************
+// install postgres
+$ sudo apt-get install wget ca-certificates
+
+$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+
+$ sudo apt-get update
+
+$ sudo apt-get install postgresql postgresql-contrib -y
+
+$ sudo su - postgres
